@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/stylePopup.css">
+    <link rel="stylesheet" href="../css/styleMiniPlayer.css">
+    <script src="https://kit.fontawesome.com/042483e592.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="content">
+        <div class="flex-center">
+            <button onclick="openPopup()" class="navBtn" id="openPlayer"> Open Player </button>
+
+            
+        </div>
+        <div class="flex-center">
+            <div id="playlistFolder" class="grid">
+                <div id="playlistFolderCreatePlaylist" class="grid">
+                    <nav class="flex-center">
+                        <div>
+                            <input type="text" id="searchTerm" class="" placeholder="search for your favorite track!">
+                            <button id="searchTermBtn" class="navBtn3">Search</button>
+                        </div>
+                    </nav>
+                    <div class="flex-center">
+                        <button id="createPlaylistBtn" onclick="createPlaylist()" class="navBtn3"> Create Playlist </button>
+                        <!-- <button id="addSong" onclick="choosePlaylistToAddTrackTo('','')" class="navBtn3"> Add Dragonforce to Playlist </button> -->
+                        <button id="showPlaylists" onclick="clickShowPlaylists()" class="navBtn3">Show Playlists</button>
+                    </div>
+                    <div id="selectDiv" class="flex-center">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="songs"></div>
+    </div>
+    <div class="flex-center">
+        <div id="bottom-window" > 
+            <div id="durationMini">
+                <input type="range" id="durationMiniValue">
+            </div>
+            <div class="flex-between" id="timerMini">
+                <span id="currentTimeMini"></span>
+                <span id="durationOfTrackMini"></span>
+            </div>
+            <div class="flex-between">
+                <div class="flex-around">
+                    <div>
+                        <img id="miniImg">
+                    </div>
+                    <div class="grid">
+                        <span id="songNameMini"></span>
+                        <span id="artistNameMini"></span>
+                    </div>
+                </div>
+                <div id="playerBtns" class="flex-around">
+                    <div class="flex-center">
+                        <button id="goPreviousBtnMini" class="playerBtn" onclick="prevClick()">
+                            <i class="fa-solid fa-backward"></i>
+                        </button>
+                    </div>
+                    <div class="flex-center">
+                        <button id="pauseActualBtnMini" class="playerBtn" onclick="pauseMiniClick()">
+                            <i id="pauseBtnMini" class="fa-solid fa-pause"></i>
+                        </button>
+                    </div>
+                    <div class="flex-center">
+                        <button id="goNextBtnMini" class="playerBtn" onclick="nextClick()">
+                            <i class="fa-solid fa-forward"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex-between" id="volumeAndBtn">
+                    <div id="volumeMini">
+                        <input type="range" id="volumeBarMini">
+                    </div>
+                    <div class="volumeAndBtn">
+                        <button id="openPlayerBtn" class="navBtn3" onclick="openPopup()">open player</button>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+    <div id="overlay" class="overlay" onclick="closePopup(); showBottomWindow()"></div>
+    <div id="popup" class="popup">
+        <div id="playerItself" class="playerGrid">
+            <div id="playerMenu" class="grid">
+                <div id="bubble" class="playerBubble">
+                    <div id="divForImg" class="flex-center">
+                        <img id="imgInPlayer">
+                    </div>
+                    <div id="divForSongNameAndAuthor" class="grid">
+                        <div id="songName"></div>
+                        <div id="artistName"></div>
+                    </div>
+                    <div id="playerDiv" class="flex-center">
+                        <audio id="player">
+                            <!-- <source id="linkToTrack">
+                            type="audio/mpeg" 
+                            src="../Dragonforce - Through the Fire and Flames(Lyrics).mp3"> -->
+                        </audio>
+                    </div>
+                    <div id="progreesBar" class="flex-center"> 
+                        <input type="range" value="0" id="audioProgress">
+                    </div>
+                    <div id="timer" class="flex-between">
+                        <p id="timeElapsed"></p>
+                        <p id="timeOverall"></p>
+                    </div>
+                    <div id="playerBtns" class="flex-between">
+                        <div class="flex-center">
+                            <button id="goPreviousBtn" class="playerBtn" onclick="prevClick()">
+                                <i class="fa-solid fa-backward"></i>
+                            </button>
+                        </div>
+                        <div class="flex-center">
+                            <button id="pauseActualBtn" class="playerBtn" onclick="pauseClick()">
+                                <i id="pauseBtn" class="fa-solid fa-pause"></i>
+                            </button>
+                        </div>
+                        <div class="flex-center">
+                            <button id="goNextBtn" class="playerBtn" onclick="nextClick()">
+                                <i class="fa-solid fa-forward"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="otherStuff" class="flex-center">
+                        <p>Volume</p>
+                        <input type="range" value="0.1" id="volumeBar">
+                        <div class="flex-center"><button id="repeatButton" class="playerBtn" onclick="changeRepeatMode()">no repeat</button></div>
+                    </div>
+                </div>
+                <div id="closePlayerDiv" class="flex-center">
+                    <button id="closePlayerButton" class="navBtn" onclick="closePopup()">x</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/scriptGenerals.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/scriptPlaylists.js"></script>
+    <script src="../js/scriptSearch.js"></script>
+    <script src="../js/scriptMiniplayer.js"></script>
+</body>
+</html>
