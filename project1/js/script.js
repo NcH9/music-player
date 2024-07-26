@@ -93,8 +93,7 @@ function prevClick()
 }
 function nextClick()
 {
-    document.getElementById('player').currentTime = document.getElementById('player').duration;
-    endOfTrack();
+    goNextTrack();
 }
 function openPopup()
 {
@@ -130,6 +129,16 @@ function loadPlayer()
     else
     {
         player.volume = 0;
+    }
+
+    let repeatButton = document.getElementById('repeatButton');
+    if (getCookie('repeatMode'))
+    {
+        repeatButton.innerText = getCookie('repeatMode');
+    }
+    else
+    {
+        repeatButton.innerText = 'no repeat';
     }
     volume.value = player.volume * 100;
 
@@ -447,14 +456,17 @@ function changeRepeatMode()
     if (getRepeatMode() == 1)
     {
         repeatButton.innerText = 'repeat one';
+        setCookie('repeatMode', repeatButton.innerText)
     }
     else if (getRepeatMode() == 2)
     {
         repeatButton.innerText = 'repeat playlist';
+        setCookie('repeatMode', repeatButton.innerText)
     }
     else
     {
         repeatButton.innerText = 'no repeat';
+        setCookie('repeatMode', repeatButton.innerText)
     }
 }
 function getRepeatMode()
@@ -526,6 +538,16 @@ function endOfTrack()
             else
             {
                 player.pause();
+                if (document.getElementById('pauseBtn').classList.contains('fa-pause'))
+                {
+                    document.getElementById('pauseBtn').classList.add('fa-play');
+                    document.getElementById('pauseBtn').classList.remove('fa-pause');
+                }
+                if (document.getElementById('pauseBtnMini').classList.contains('fa-pause'))
+                {
+                    document.getElementById('pauseBtnMini').classList.add('fa-play');
+                    document.getElementById('pauseBtnMini').classList.remove('fa-pause');
+                }
             }
         }
     }
