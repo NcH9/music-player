@@ -1,14 +1,14 @@
 
 const bottomWindow = document.getElementById('bottom-window');
 
-// Пример функции для показа окна
-function showBottomWindow() {
+function showBottomWindow() 
+{
     bottomWindow.style.display = 'block';
     bottomWindow.style.position = 'fixed';
 }
 
-// Пример функции для скрытия окна
-function hideBottomWindow() {
+function hideBottomWindow() 
+{
     bottomWindow.style.display = 'none';
 }
 // document.getElementById('click').addEventListener('click', () => {
