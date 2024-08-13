@@ -1,0 +1,179 @@
+/* Стили для всплывающего окна */
+.popup {
+    display: none;
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 225, 144);
+    background: linear-gradient(0.25turn, rgba(255, 201, 25, 0.5), rgba(255, 111, 0, 0.5), rgba(255, 10, 92, 0.5));
+
+
+    padding: 20px;
+
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 3 -3 5px rgba(0, 0, 0, 0.25);
+
+    z-index: 1000;
+    max-height: calc(100% - 40px); /* Высота контента внутри окна, учитывая padding */
+    overflow-y: auto;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 900;
+}
+
+/* width */
+.playlistBubble::-webkit-scrollbar {
+    width: 15px;
+    border-radius: 15px;
+}
+
+/* Track */
+.playlistBubble::-webkit-scrollbar-track {
+    background: rgba(208, 128, 254, 0.25);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+/* Handle */
+.playlistBubble::-webkit-scrollbar-thumb {
+    background: rgb(221, 49, 255, 0.3); 
+    border-radius: 15px;
+
+}
+
+/* Handle on hover */
+.playlistBubble::-webkit-scrollbar-thumb:hover {
+    background: rgba(160, 3, 192, 0.3); 
+
+}
+
+/* width */
+body::-webkit-scrollbar {
+    width: 15px;
+    border-radius: 15px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+    background: rgba(255, 0, 153, 0.3);
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background: rgba(255, 0, 102, 0.5); 
+    border-radius: 15px;
+
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 0, 170, 0.7); 
+
+}
+
+#audioProgress{
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: orange;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.5);
+
+}
+#audioProgress::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(252, 110, 58);
+    border: solid 2px white;
+    box-shadow: 1px -1px 5px rgba(128, 128, 128, 0.5);
+}
+#volumeBar{
+    -webkit-appearance: none;
+    height: 6px;
+    background: orange;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.5);
+}
+#volumeBar::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(252, 110, 58);
+    border: solid 2px white;
+    box-shadow: 1px -1px 5px rgba(128, 128, 128, 0.5);
+}
+#volumeDiv p{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.gridForCurrentPlaylist{
+    display: grid;
+}
+.playerBtn{ 
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: pink;
+    box-shadow: 3px -3px 5px rgb(0, 0, 0, 0.25);
+    margin: 15px;
+    border: solid 3px white;
+}
+#pauseActualBtn{ 
+    height: 75px;
+    width: 75px;
+}
+#timer{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#repeatButton{
+    font-size: 14px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    text-shadow: 1px -1px 5px rgb(255, 255, 255);
+
+    border-radius: 15%;
+    width: 70px;
+}
+#songName{
+    display: flex;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.8);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+#artistName{
+    display: flex;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.5);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#openPlayer {
+    display: none;
+}
